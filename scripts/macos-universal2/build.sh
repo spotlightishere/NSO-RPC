@@ -4,6 +4,13 @@ set -e
 # Run everything relative to our script directory.
 cd "$(dirname "$0")"
 
+# Within GitHub Actions and similar, we should use the Python.org
+# copy of Python available. This permits a universal2 framework for py2app.
+# (Otherwise, GitHub's default runners include a single architecture version.)
+if [[ "$CI" == "true" ]]; then
+  alias python3=/usr/local/bin/python
+fi
+
 # Activate a virtual environment so we don't pollute the system environment.
 python3 -m venv --upgrade-deps venv
 source venv/bin/activate
