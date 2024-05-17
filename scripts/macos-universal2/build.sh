@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 # copy of Python available. This permits a universal2 framework for py2app.
 # (Otherwise, GitHub's default runners include a single architecture version.)
 if [[ "$CI" == "true" ]]; then
-  alias python3=/usr/local/bin/python
+  alias python3=python3.11
 fi
 
 # Activate a virtual environment so we don't pollute the system environment.
