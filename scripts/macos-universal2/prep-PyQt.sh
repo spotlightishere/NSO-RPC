@@ -9,7 +9,7 @@ set -e
 # (Otherwise, GitHub's default runners include a single architecture version.)
 if [[ "$CI" == "true" ]]; then
   shopt -s expand_aliases
-  alias python3=python3.11
+  alias python3=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
 fi
 
 # If we already have a universal2 wheel available, install and process no further.
