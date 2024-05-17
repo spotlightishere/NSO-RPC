@@ -5,9 +5,10 @@ set -e
 cd "$(dirname "$0")"
 
 # Within GitHub Actions and similar, we should use the Python.org
-# copy of Python available. This permits a universal2 framework for py2app.
+# copy of Python 3.11 available. This permits a universal2 framework for py2app.
 # (Otherwise, GitHub's default runners include a single architecture version.)
 if [[ "$CI" == "true" ]]; then
+  shopt -s expand_aliases
   alias python3=python3.11
 fi
 
